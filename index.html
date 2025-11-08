@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Situs resmi Universitas Abdurrab (UNIVRAB) - Beranda, PMB, Profil, dan Informasi Akademik. Universitas Islam berbasis riset menuju kelas internasional.">
+  <meta name="keywords" content="Universitas Abdurrab, UNIVRAB, PMB, Penerimaan Mahasiswa Baru, Fakultas Kedokteran, Riau, Pekanbaru, Akreditasi Unggul">
+  <meta name="author" content="Universitas Abdurrab">
+  <title>Universitas Abdurrab (UNIVRAB) - Official Website & PMB</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-ie2d0W02W9/L1X2i4K8oV4V6Z6e5/tA6t5A1Q8e5J5U4z5I5Q4P4T2t8l5Y8Y8M3R1F1k4F5d9Q8oF5N4jQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="icon" href="https://media.neliti.com/media/organisations/logo-None-universitas-abdurrab-8a3f2db3.png" type="image/png">
+  
+  <style>
+    /* UNIVRAB Color Palette & Base Styles */
+    :root {
+      --univrab-red: #8C1C1E; /* Merah Marun Utama */
+      --univrab-light-red: #A32629;
+      --univrab-bg-light: #f9f9f9;
+      --univrab-bg-dark: #2c0e0e; /* Header/Footer Gelap */
+      --univrab-text-main: #333;
+      --univrab-text-light: #f5f5ff;
+      --univrab-text-accent: #8C1C1E;
+      --univrab-blue: #007bff;
+      --univrab-green: #28a745;
+      --univrab-yellow-accent: #ffc107;
+      --border-radius: 8px; 
+      --shadow: 0 4px 15px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    /* Global Styles */
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--univrab-bg-light);
+      color: var(--univrab-text-main);
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    * { box-sizing: border-box; }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--univrab-text-accent); /* Default heading color */
+    }
+    a {
+      text-decoration: none;
+      color: var(--univrab-text-accent);
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--univrab-red); }
+    
+    /* Top Bar */
+    .top-bar {
+      background: var(--univrab-bg-dark);
+      color: var(--univrab-text-light);
+      font-size: 0.75rem;
+      padding: 6px 40px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+    .top-bar a {
+      color: #f5f5f5;
+      opacity: 0.8;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+    .top-bar a:hover { color: var(--univrab-yellow-accent); opacity: 1; }
+    .top-bar i { margin-right: 5px; }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .main-nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      flex-wrap: wrap;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo { width: 50px; height: auto; }
+    .site-title {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--univrab-text-accent);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--univrab-text-main);
+      font-weight: 600;
+      padding: 8px 0;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--univrab-text-accent); }
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--univrab-red);
+        border-radius: 2px;
+    }
+
+    /* Main Content Container */
+    .content-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--univrab-red) 0%, var(--univrab-light-red) 100%);
+      color: var(--univrab-text-light);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(140, 28, 30, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+    .hero-banner h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      font-weight: 800;
+      color: var(--univrab-yellow-accent);
+    }
+    .hero-banner p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .hero-banner-info {
+        flex-shrink: 0;
+        text-align: right;
+        background: rgba(0,0,0,0.15);
+        padding: 15px 25px;
+        border-radius: 6px;
+    }
+    .hero-banner-info .status {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+    }
+    
+    /* Call To Action Button (CTA) */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background: var(--univrab-light-red);
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 10px; /* Tambahkan margin atas untuk pemisah */
+    }
+    .cta-button:hover {
+      background: var(--univrab-red);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      color: #fff;
+    }
+    .cta-button i { margin-left: 8px; font-size: 1.1rem; }
+    
+    /* Page Section */
+    .page-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-top: 30px;
+    }
+    
+    .page-section h2 {
+      color: var(--univrab-text-accent);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-top: 0;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+    }
+    .page-section h2 i { margin-right: 10px; color: var(--univrab-red); }
+    .page-section h3 {
+      color: var(--univrab-red);
+      font-size: 1.5rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .page-section h3 i { margin-right: 8px; color: var(--univrab-red); }
+
+    /* Text Content Styling (Global) */
+    .text-content p {
+        margin-bottom: 18px;
+        text-align: justify;
+    }
+    .text-content ul {
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+    .text-content ul li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+    
+    /* Statistic Grid */
+    .statistic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .stat-block {
+      background: var(--univrab-bg-dark);
+      color: #fff;
+      padding: 25px 15px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      border-bottom: 4px solid var(--univrab-yellow-accent);
+    }
+    .stat-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .stat-block .icon {
+      font-size: 2.8rem;
+      margin-bottom: 5px;
+      color: var(--univrab-yellow-accent);
+    }
+    .stat-block .number {
+      font-family: 'Roboto Slab', serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+    }
+    .stat-block .label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 8px;
+      opacity: 0.9;
+      text-transform: uppercase;
+    }
+    
+    /* Content Image Styles */
+    .content-image-wrapper {
+        margin: 20px 0;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        background: #f0f0f0; /* Placeholder background */
+        display: flex; /* Untuk center image di mobile */
+        justify-content: center;
+        align-items: center;
+    }
+    .content-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+    .content-image-wrapper:hover .content-image { transform: scale(1.03); }
+
+    .image-float-left { 
+        float: left; 
+        margin-right: 25px; 
+        margin-bottom: 15px; 
+        width: 100%; 
+        max-width: 350px; 
+    }
+    .image-float-right { 
+        float: right; 
+        margin-left: 25px; 
+        margin-bottom: 15px; 
+        width: 100%; 
+        max-width: 350px; 
+    }
+    .clearfix::after { content: ""; clear: both; display: table; }
+
+    /* PMB Info Blocks */
+    .pmb-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .info-card {
+        background: #f7f7f7;
+        border-left: 5px solid var(--univrab-red);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+    .info-card h3 {
+        color: var(--univrab-red);
+        font-size: 1.3rem;
+        margin: 0 0 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .info-card ul { list-style: none; padding-left: 0; margin-top: 10px; }
+    .info-card ul li a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--univrab-blue);
+        font-weight: 500;
+        padding: 5px 0;
+        transition: padding-left 0.2s;
+    }
+    .info-card ul li a:hover { padding-left: 5px; color: #0056b3; }
+    /* Spesifik untuk teks di dalam info-card h3 */
+    .info-card h3 span {
+        font-weight: 700; /* Memastikan teks di dalam span tetap tebal */
+    }
+
+
+    /* Program List Styles */
+    .program-list-section {
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px dashed #eee;
+    }
+    .program-list {
+        list-style: none;
+        padding-left: 0;
+        columns: 2;
+        column-gap: 40px;
+        margin-top: 15px;
+    }
+    .program-list li {
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #555;
+        break-inside: avoid-column;
+        position: relative;
+        padding-left: 20px;
+    }
+    .program-list li::before {
+        content: '\f105'; /* Icon angle-right */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: var(--univrab-red);
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .program-list li a { color: var(--univrab-text-main); }
+    .program-list li a:hover { color: var(--univrab-red); text-decoration: underline; }
+
+    /* System Blocks (SIAKAD, SPADA) */
+    .system-block {
+      background: #f0f7ff;
+      border: 1px solid #cce5ff;
+      border-left: 8px solid var(--univrab-blue);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
+    }
+    .system-block h2 {
+      color: #0056b3;
+      border-bottom: none;
+      font-size: 1.8rem;
+      justify-content: center; /* Center icon and text */
+    }
+    .system-block p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-size: 1.05rem;
+      color: #444;
+      text-align: justify;
+    }
+    .system-block .cta-button {
+      background-color: var(--univrab-blue);
+      text-transform: none;
+      padding: 15px 30px;
+    }
+    .system-block .cta-button:hover {
+      background-color: #0056b3;
+    }
+    .spada-block {
+        border-left-color: var(--univrab-green);
+        background: #e6f7f0;
+        border-color: #b7e0d3;
+    }
+    .spada-block h2 {
+        color: #1e7e34;
+    }
+    .spada-block .cta-button {
+        background-color: var(--univrab-green);
+    }
+    .spada-block .cta-button:hover {
+        background-color: #1e7e34;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--univrab-bg-dark);
+      color: #e0e0e0;
+      padding: 50px 40px 0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 30px auto;
+      text-align: left;
+    }
+    .footer-column h4 {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--univrab-light-red);
+      padding-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .footer-column p { line-height: 1.7; opacity: 0.9; margin-bottom: 10px; }
+    .footer-column ul { list-style: none; padding: 0; margin: 0; }
+    .footer-column ul li { margin-bottom: 8px; }
+    .footer-column ul a {
+      color: #e0e0e0;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-column ul a:hover { color: var(--univrab-yellow-accent); padding-left: 5px; }
+    .footer-logo-small { width: 50px; margin-right: 10px; }
+    .footer-logo-container { display: flex; align-items: center; margin-bottom: 15px; }
+    .footer-bottom {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccc;
+    }
+    
+    /* Responsive Adjustments (Desktop/Laptop) */
+    @media (max-width: 1200px) { 
+        .main-nav { padding: 10px 20px; } 
+        .nav-links { gap: 20px; }
+    }
+
+    /* Responsive Adjustments (iPad/Tablet) */
+    @media (max-width: 992px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .main-nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { justify-content: flex-start; margin-top: 15px; gap: 20px; width: 100%; }
+      .hero-banner { flex-direction: column; text-align: center; }
+      .hero-banner-info { text-align: center; margin-left: 0; margin-top: 20px; }
+      .image-float-left, .image-float-right { float: none; margin: 20px auto; max-width: 100%; }
+      .statistic-grid { grid-template-columns: repeat(2, 1fr); }
+      .pmb-info-grid { grid-template-columns: 1fr; }
+      .page-section h2, .page-section h3 { justify-content: flex-start; } /* Align headings left */
+    }
+
+    /* Responsive Adjustments (Handphone/Mobile) */
+    @media (max-width: 768px) {
+        .footer-grid { grid-template-columns: 1fr; }
+        .top-bar { padding: 6px 20px; justify-content: center; gap: 15px; }
+        .content-container { padding: 0 15px; }
+        .page-section { padding: 20px; }
+        .program-list { columns: 1; }
+        .site-title { font-size: 1.3rem; }
+        .nav-links { gap: 10px; }
+        .nav-links a { font-size: 0.85rem; padding: 6px 0; }
+        .hero-banner { padding: 20px; }
+        .hero-banner h1 { font-size: 1.6rem; }
+        .statistic-grid { grid-template-columns: 1fr; }
+        .stat-block .number { font-size: 3rem; }
+        .stat-block .label { font-size: 0.8rem; }
+        .system-block { padding: 20px; }
+        .system-block h2 { font-size: 1.5rem; }
+        .system-block p { font-size: 0.95rem; }
+        .main-nav { padding: 10px 15px; } /* More padding for smaller screens */
+        .logo-container .site-title { font-size: 1.2rem; }
+        .footer-column h4 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="mailto:humas@univrab.ac.id"><i class="fas fa-envelope"></i> HUMAS@UNIVRAB.AC.ID</a>
+    <a href="tel:08116900026"><i class="fas fa-phone"></i> Telp/WA: 08116900026</a>
+  </div>
+  
+  <header>
+    <nav class="main-nav" role="navigation" aria-label="Navigasi utama">
+      <div class="logo-container">
+        <img src="https://media.neliti.com/media/organisations/logo-None-universitas-abdurrab-8a3f2db3.png" alt="Logo Universitas Abdurrab" class="logo" />
+        <span class="site-title">UNIVERSITAS ABDURRAB</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#profil" data-page="profil" aria-label="Halaman Profil">PROFIL</a></li>
+        <li><a href="#penerimaan" data-page="penerimaan" aria-label="Halaman Penerimaan Mahasiswa Baru">PENERIMAAN</a></li>
+        <li><a href="#perkuliahan" data-page="perkuliahan" aria-label="Halaman Perkuliahan">PERKULIAHAN</a></li>
+        <li><a href="#siakad" data-page="siakad" aria-label="Sistem Informasi Akademik (SIAKAD)">SIAKAD</a></li>
+        <li><a href="#spada" data-page="spada" aria-label="Sistem Pembelajaran Daring (SPADA)">SPADA</a></li>
+        <li><a href="#portal_dokumen" data-page="portal_dokumen" aria-label="Halaman Portal & Dokumen">PORTAL</a></li>
+        <li><a href="https://jurnal.univrab.ac.id/" target="_blank" aria-label="Jurnal & Publikasi - Buka di tab baru">PENELITIAN</a></li>
+        <li><a href="https://kemahasiswaan.univrab.ac.id/" target="_blank" aria-label="Kemahasiswaan (CIVITAS) - Buka di tab baru">CIVITAS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-container" role="main">
+    
+    <div id="static-header-blocks" style="display: none;">
+      <section class="hero-banner" aria-labelledby="hero-title">
+        <div style="flex: 1;">
+            <h1 id="hero-title"><i class="fas fa-star" style="color: var(--univrab-yellow-accent); margin-right: 10px;"></i> Kedokteran Raih Akreditasi UNGGUL</h1>
+            <p>Universitas Abdurrab Gelar Doa Bersama dan Syukuran atas pencapaian Akreditasi UNGGUL untuk Program Studi Pendidikan Dokter.</p>
+        </div>
+        <div class="hero-banner-info">
+            <div class="status">UNGGUL</div><br>
+            <small>09 JUNI 2025</small>
+        </div>
+      </section>
+    </div>
+    
+    <article class="page-section text-content" id="main-content" aria-live="polite">
+      <div class="loading">
+        <div class="spinner" role="status">
+          <span class="sr-only">Memuat konten...</span>
+        </div>
+        Memuat...
+      </div>
+    </article>
+
+    <section class="youtube-grid" aria-labelledby="video-gallery-title">
+      <h2 id="video-gallery-title" style="text-align: center; color: var(--univrab-text-accent); margin-top: 50px; border-bottom: 2px solid #eee; padding-bottom: 10px; grid-column: 1 / -1;"><i class="fab fa-youtube" style="margin-right: 10px; color: var(--univrab-red);"></i> Video & Liputan Kampus</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VqSl7fYuCMY" title="Liputan Kegiatan Kampus 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/0uHMYLNMGUo" title="Liputan Kegiatan Kampus 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/F3ck1m7RuA8" title="Liputan Kegiatan Kampus 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      
+      <div class="footer-column">
+        <div class="footer-logo-container">
+            <img src="https://media.neliti.com/media/organisations/logo-None-universitas-abdurrab-8a3f2db3.png" alt="Logo Universitas Abdurrab Putih" class="footer-logo-small" />
+            <h4 style="border: none; padding: 0; margin: 0; color: var(--univrab-yellow-accent);">UNIVRAB</h4>
+        </div>
+        <p>Menjadi Universitas Professional berlandaskan Nilai-Nilai Rabbani, Amanah, dan Beradab (RAB) menuju Kelas International pada Tahun 2045.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Akademik & Sistem</h4>
+        <ul>
+          <li><a href="#perkuliahan"><i class="fas fa-caret-right"></i> Fakultas & Prodi</a></li>
+          <li><a href="#siakad"><i class="fas fa-caret-right"></i> SIAKAD Mahasiswa</a></li>
+          <li><a href="#spada"><i class="fas fa-caret-right"></i> SPADA E-Learning</a></li>
+          <li><a href="https://jurnal.univrab.ac.id/" target="_blank"><i class="fas fa-caret-right"></i> Jurnal & Publikasi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Pendaftaran</h4>
+        <ul>
+          <li><a href="#penerimaan"><i class="fas fa-caret-right"></i> Info PMB</a></li>
+          <li><a href="https://admisi.univrab.ac.id" target="_blank"><i class="fas fa-caret-right"></i> Daftar Online (Admisi)</a></li>
+          <li><a href="tel:08116900026"><i class="fas fa-caret-right"></i> Kontak Panitia PMB</a></li>
+        </ul>
+        <h4 style="margin-top: 20px;">Media Sosial</h4>
+        <ul>
+            <li><a href="https://www.instagram.com/universitasabdurrab.official/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.youtube.com/@universitasabdurrab" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Kontak Kami</h4>
+        <p>
+          <i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i> Alamat:<br>
+          Jl. Riau Ujung No.73, Pekanbaru, Riau, Indonesia.
+        </p>
+        <p>
+          <i class="fas fa-envelope" style="margin-right: 5px;"></i> Email:<br>
+          <a href="mailto:humas@univrab.ac.id" style="display: inline;">humas@univrab.ac.id</a>
+        </p>
+        <p>
+          <i class="fas fa-phone" style="margin-right: 5px;"></i> Whatsapp:<br>
+          <a href="https://wa.me/628116900026" target="_blank" style="display: inline;">08116900026</a>
+        </p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="current-year">2025</span> Universitas Abdurrab. Developed for Excellence.
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // === BANK GAMBAR DEFINITIF DARI INPUT PENGGUNA ===
+    const imageUrls = [
+      "https://i.ibb.co.com/Z5XcXxb/images-4.jpg",
+      "https://i.ibb.co.com/HDd9MBct/images-3.jpg",
+      "https://i.ibb.co.com/bMVY3mpc/images-2.jpg",
+      "https://i.ibb.co.com/1Yv3L8sT/images.jpg",
+      "https://i.ibb.co.com/7JLT7Q8g/20240227135227.jpg",
+      "https://i.ibb.co.com/Xr0xXYwj/images-1.jpg"
+    ];
+
+    function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * imageUrls.length);
+        return imageUrls[randomIndex];
+    }
+
+    // === KONTEN DINAMIS (RAPIH DAN BERSTRUKTUR) ===
+    const pageContent = {
+      'profil': `
+        <h2><i class="fas fa-history"></i> Sejarah & Visi Misi Universitas Abdurrab</h2>
+        
+        <div class="clearfix">
+            <div class="content-image-wrapper image-float-left">
+                <img src="${getRandomImage()}" alt="Gedung Rektorat Abdurrab" class="content-image">
+            </div>
+            
+            <h3>Sejarah Singkat</h3>
+            <p>Universitas Abdurrab (UNIVRAB) berkedudukan di Jl. Riau Ujung No. 73 Pekanbaru. Cikal-bakalnya dimulai dari Chest Clinic pada tahun 1979 yang kemudian berkembang menjadi Rumah Sakit Prof. Dr. H. Tabrani Rab.</p>
+            
+            <p>Pada tahun 1983 lahir Yayasan Abdurrab Pekanbaru, diambil dari nama orang tua pendiri, H. Abdoerrab. Yayasan ini mendirikan AKPER, AKAFARMA, AKFIS, AKBID hingga pada tanggal 7 Juni 2005, UNIVRAB resmi berdiri berdasarkan SK Mendiknas RI No. 75/D/O/2005.</p>
+            
+            <p>Fakultas Kedokteran memperoleh izin penyelenggaraan pada 11 Juli 2008. Tanggal 11 Juli kemudian ditetapkan sebagai Hari Jadi Universitas Abdurrab.</p>
+            <a href="https://univrab.ac.id/profil/" class="cta-button" style="background: var(--univrab-blue); margin-top: 10px; margin-bottom: 20px; font-size: 0.9rem; text-transform: none;"><i class="fas fa-arrow-right"></i> Baca Profil Lengkap</a>
+        </div>
+        
+        <div style="margin-top: 30px;" class="clearfix">
+            <h3><i class="fas fa-eye"></i> Visi Universitas (2045)</h3>
+            <blockquote style="font-size: 1.1rem; font-style: italic; border-left: 5px solid var(--univrab-red); padding-left: 15px; background: #fff0f0; padding: 15px; border-radius: 4px;">
+                "Menjadi Universitas Professional berlandaskan Nilai-Nilai Rabbani, Amanah, dan Beradab (RAB) Menuju Kelas International pada Tahun 2045."
+            </blockquote>
+            
+            <h3><i class="fas fa-list-ul"></i> Misi Utama</h3>
+            <ul>
+                <li>Melaksanakan Catur Dharma Perguruan Tinggi (Pendidikan, Penelitian, Pengabdian, dan Nilai-nilai RAB).</li>
+                <li>Melaksanakan pendidikan untuk memajukan IPTEKS dengan nilai-nilai RAB.</li>
+                <li>Melaksanakan penelitian yang kreatif, inovatif, dan berorientasi produk untuk kesejahteraan ummat.</li>
+                <li>Melaksanakan pengabdian masyarakat dari hasil-hasil penelitian.</li>
+            </ul>
+        </div>
+
+        <section class="statistic-grid" aria-label="Statistik Universitas Abdurrab" style="margin-top: 40px;">
+          <h2 style="color: var(--univrab-text-accent); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; width: 100%; grid-column: 1 / -1; font-size: 1.8rem;"><i class="fas fa-chart-bar"></i> Data Statistik Kampus</h2>
+          <div class="stat-block">
+            <div class="icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="number">3107</div>
+            <div class="label">Mahasiswa Aktif</div>
+          </div>
+          <div class="stat-block">
+            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="number">8255</div>
+            <div class="label">Alumni Sukses</div>
+          </div>
+          <div class="stat-block">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <div class="number">4</div>
+            <div class="label">Fakultas Terbaik</div>
+          </div>
+          <div class="stat-block">
+            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="number">15</div>
+            <div class="label">Program Studi</div>
+          </div>
+        </section>
+      `,
+      
+      'penerimaan': `
+        <h2><i class="fas fa-bullhorn"></i> Penerimaan Mahasiswa Baru</h2>
+        <p style="font-size: 1.1rem; font-weight: 500;">Assalamu’alaikum Wr Wb. Segera bergabung dengan Universitas Abdurrab. Kuota di beberapa Program Studi Unggulan (terutama Kedokteran) sangat terbatas.</p>
+
+        <div style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; margin-top: 20px;">
+            <a href="https://admisi.univrab.ac.id" target="_blank" class="cta-button" style="background: var(--univrab-red); flex: 1; min-width: 250px; justify-content: center;"><i class="fas fa-arrow-alt-circle-right"></i> Daftar Online Sekarang</a>
+            <a href="tel:08116900026" class="cta-button" style="background: var(--univrab-green); flex: 1; min-width: 250px; justify-content: center;"><i class="fab fa-whatsapp"></i> Hubungi Panitia (WA)</a>
+        </div>
+        
+        <div class="content-image-wrapper" style="margin-top: 30px;">
+            <img src="${getRandomImage()}" alt="Poster Pendaftaran Mahasiswa Baru" class="content-image">
+        </div>
+
+        <div class="pmb-info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-download"></i> <span>Berkas Download PMB</span></h3>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1LZxDV--EQjmHnBWCHywvKUujqv9Icc_t/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Form Pernyataan Maba</a></li>
+                    <li><a href="https://admisi.univrab.ac.id/biaya/perkuliahan" target="_blank"><i class="fas fa-wallet"></i> Rincian Biaya Kuliah 2026/2027</a></li>
+                    <li><a href="https://drive.google.com/file/d/1j19IomkjR6AgaRZJST0Wepr4rIbRTkCr/view?usp=sharing" target="_blank"><i class="fas fa-stream"></i> Alur Pendaftaran</a></li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-sitemap"></i> <span>Fakultas & Program</span></h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="font-weight: 700; color: var(--univrab-text-accent); margin-bottom: 8px;"><i class="fas fa-heartbeat"></i> FAKULTAS KEDOKTERAN</li>
+                    <li style="font-weight: 700; color: var(--univrab-text-accent); margin-bottom: 8px;"><i class="fas fa-pills"></i> FARMASI & KESEHATAN</li>
+                    <li style="font-weight: 700; color: var(--univrab-text-accent); margin-bottom: 8px;"><i class="fas fa-cog"></i> FAKULTAS TEKNIK</li>
+                    <li style="font-weight: 700; color: var(--univrab-text-accent); margin-bottom: 8px;"><i class="fas fa-brain"></i> FAKULTAS PSIKOSOSPOL</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-top: 40px;"><i class="fas fa-thumbs-up"></i> Mengapa Memilih UNIVRAB?</h3>
+        <div style="display: flex; gap: 20px; text-align: center; margin-top: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 6px; min-width: 150px; background: #fcfcfc; border-bottom: 3px solid var(--univrab-red);">
+              <i class="fas fa-mosque" style="font-size: 2.5rem; color: var(--univrab-red); margin-bottom: 5px;"></i>
+              <p style="font-weight: 600; margin: 5px 0 0 0;">UNIVERSITAS BERNUANSA ISLAMI</p>
+          </div>
+          <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 6px; min-width: 150px; background: #fcfcfc; border-bottom: 3px solid var(--univrab-red);">
+              <i class="fas fa-award" style="font-size: 2.5rem; color: var(--univrab-red); margin-bottom: 5px;"></i>
+              <p style="font-weight: 600; margin: 5px 0 0 0;">AKREDITASI UNGGUL/BAIK SEKALI</p>
+          </div>
+          <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 6px; min-width: 150px; background: #fcfcfc; border-bottom: 3px solid var(--univrab-red);">
+              <i class="fas fa-money-bill-wave" style="font-size: 2.5rem; color: var(--univrab-red); margin-bottom: 5px;"></i>
+              <p style="font-weight: 600; margin: 5px 0 0 0;">TANPA BIAYA SKS</p>
+          </div>
+        </div>
+      `,
+      
+      'perkuliahan': `
+        <h2><i class="fas fa-graduation-cap"></i> Program Studi dan Informasi Akademik</h2>
+        <div style="margin-bottom: 20px;">
+            <a href="#siakad" class="cta-button" style="background: var(--univrab-blue); margin-right: 10px; padding: 10px 20px; text-transform: none;"><i class="fas fa-tachometer-alt"></i> Akses SIAKAD</a>
+            <a href="#spada" class="cta-button" style="background: var(--univrab-green); padding: 10px 20px; text-transform: none;"><i class="fas fa-chalkboard"></i> Akses SPADA</a>
+        </div>
+
+        <div class="clearfix">
+            <div class="content-image-wrapper image-float-right">
+                <img src="${getRandomImage()}" alt="Mahasiswa Belajar di Kelas" class="content-image">
+            </div>
+            
+            <div class="program-list-section">
+                <h3>Program Sarjana (S1)</h3>
+                <p>Program sarjana (S1) bertujuan untuk menghasilkan lulusan yang memiliki pemahaman teoritis mendalam, mampu melakukan penelitian, dan profesional di bidangnya.</p>
+                <ul class="program-list">
+                    <li>PENDIDIKAN DOKTER</li>
+                    <li>FARMASI</li>
+                    <li>FISIOTERAPI</li>
+                    <li>PSIKOLOGI</li>
+                    <li>TEKNIK SIPIL</li>
+                    <li><a href="https://teknik-informatika.univrab.ac.id/" target="_blank">TEKNIK INFORMATIKA</a></li>
+                    <li>BISNIS DIGITAL</li>
+                    <li>ILMU KOMUNIKASI</li>
+                    <li>HUBUNGAN INTERNASIONAL</li>
+                    <li>ILMU PEMERINTAHAN</li>
+                    <li>EKONOMI ISLAM (STEI)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="program-list-section clearfix">
+            <div class="content-image-wrapper image-float-left">
+                <img src="${getRandomImage()}" alt="Laboratorium Kampus" class="content-image">
+            </div>
+            
+            <h3>Program Vokasi (D3 & D4) dan Profesi</h3>
+            <p>Program Vokasi dan Profesi dirancang untuk menghasilkan lulusan yang siap kerja dengan kompetensi praktikal yang tinggi, didukung fasilitas laboratorium modern.</p>
+            <div style="margin-top: 15px;">
+                <h4 style="font-size: 1.2rem; color: #555; font-weight: 700;">Vokasi</h4>
+                <ul>
+                    <li style="list-style: disc; margin-left: 20px;">D3 KEPERAWATAN</li>
+                    <li style="list-style: disc; margin-left: 20px;">D3 ANALIS KESEHATAN (TLM)</li>
+                    <li style="list-style: disc; margin-left: 20px;">D4 TEKNOLOGI LABORATORIUM MEDIS (TLM)</li>
+                </ul>
+            </div>
+            <div style="margin-top: 15px;">
+                <h4 style="font-size: 1.2rem; color: #555; font-weight: 700;">Profesi</h4>
+                <ul>
+                    <li style="list-style: disc; margin-left: 20px;">PROFESI DOKTER</li>
+                    <li style="list-style: disc; margin-left: 20px;">PROFESI BIDAN</li>
+                </ul>
+            </div>
+        </div>
+      `,
+      
+      'siakad': `
+        <div class="content-image-wrapper" style="margin-bottom: 30px;">
+            <img src="${getRandomImage()}" alt="Tampilan Antarmuka SIAKAD" class="content-image">
+        </div>
+        <div class="system-block">
+            <h2><i class="fas fa-tachometer-alt"></i> Sistem Informasi Akademik (SIAKAD)</h2>
+            <p>SIAKAD adalah portal utama bagi mahasiswa dan dosen untuk mengelola seluruh administrasi akademik, termasuk: Kartu Rencana Studi (KRS), pengisian nilai, jadwal kuliah, data pribadi, dan perwalian. Sistem ini bertujuan untuk menyediakan layanan informasi yang efektif kepada komunitas perguruan tinggi.</p>
+            <a href="https://siakad.univrab.ac.id" target="_blank" class="cta-button">
+                <i class="fas fa-sign-in-alt"></i> Buka SIAKAD
+            </a>
+        </div>
+      `,
+      
+      'spada': `
+        <div class="content-image-wrapper" style="margin-bottom: 30px;">
+            <img src="${getRandomImage()}" alt="Tampilan Antarmuka SPADA" class="content-image">
+        </div>
+        <div class="system-block spada-block">
+            <h2><i class="fas fa-chalkboard"></i> SPADA (Sistem Pembelajaran Daring)</h2>
+            <p>SPADA (Sistem Pembelajaran Daring) adalah platform E-Learning resmi UNIVRAB yang digunakan untuk mendukung kegiatan perkuliahan secara digital. Di sini Anda dapat mengakses materi kuliah, kuis, forum diskusi, dan menyerahkan tugas online.</p>
+            <a href="https://spada.univrab.ac.id/" target="_blank" class="cta-button">
+                <i class="fas fa-sign-in-alt"></i> Masuk ke SPADA
+            </a>
+        </div>
+      `,
+      
+      'portal_dokumen': `
+        <h2><i class="fas fa-door-open"></i> Portal & Dokumen Penting</h2>
+        <p>Akses cepat ke portal login utama serta link penting lainnya untuk kebutuhan akademik dan administrasi.</p>
+
+        <div class="system-block" style="background: #f5f5f5; border: 1px solid #ddd; border-left: 8px solid var(--univrab-text-main);">
+            <h2>Portal Login Mahasiswa & Dosen</h2>
+            <p style="text-align: center;">Portal ini menyediakan akses terpadu ke berbagai layanan internal kampus.</p>
+            <a href="https://portal.univrab.ac.id/index.php/auth" target="_blank" class="cta-button" style="background: var(--univrab-bg-dark);">
+                <i class="fas fa-sign-in-alt"></i> MASUK KE PORTAL UNIVRAB
+            </a>
+        </div>
+        
+        <h3 style="margin-top: 40px;"><i class="fas fa-file-alt"></i> Tautan Dokumen Eksternal</h3>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+            <a href="https://ejournal.univrab.ac.id" target="_blank" class="cta-button" style="flex: 1; background: #5a6268; color: #fff; border-left: 4px solid #495057; justify-content: center; padding: 15px 15px; box-shadow: none; text-transform: none;">
+                <i class="fas fa-external-link-alt"></i> E-JURNAL
+            </a>
+            <a href="https://perpustakaan.univrab.ac.id" target="_blank" class="cta-button" style="flex: 1; background: #5a6268; color: #fff; border-left: 4px solid #495057; justify-content: center; padding: 15px 15px; box-shadow: none; text-transform: none;">
+                <i class="fas fa-external-link-alt"></i> PERPUSTAKAAN DIGITAL
+            </a>
+        </div>
+      `,
+      'default': `<h2>Halaman Tidak Ditemukan</h2><p>Maaf, konten yang Anda cari tidak ditemukan. Silakan pilih menu yang tersedia.</p>`
+    };
+
+    // === Logika Navigasi & Pemuatan Konten ===
+    document.addEventListener("DOMContentLoaded", () => {
+      const contentElement = document.getElementById('main-content');
+      const staticHeaderBlocks = document.getElementById('static-header-blocks');
+      
+      const loadingHTML = `
+        <div class="loading">
+          <div class="spinner" role="status">
+            <span class="sr-only">Memuat konten...</span>
+          </div>
+          Memuat...
+        </div>`;
+      
+      contentElement.innerHTML = loadingHTML;
+
+      function showPageContent(pageName) {
+        contentElement.innerHTML = loadingHTML;
+        const contentHtml = pageContent[pageName] || pageContent['default'];
+        
+        setTimeout(() => {
+          contentElement.innerHTML = contentHtml;
+          // Trigger CSS animations/transitions for images in the new content
+          contentElement.querySelectorAll('.content-image').forEach(img => {
+              img.style.transform = 'scale(1)'; // Placeholder to re-trigger transition if needed
+          });
+        }, 150);
+      }
+
+      function handleNavigation() {
+        let pageName = window.location.hash.substring(1);
+
+        if (!pageName) {
+          pageName = 'profil';
+          window.history.replaceState(null, '', '#profil');
+        }
+        
+        // Tentukan apakah Hero Banner ditampilkan (Hanya di halaman Penerimaan)
+        if (pageName === 'penerimaan') {
+          staticHeaderBlocks.style.display = 'flex';
+        } else {
+          staticHeaderBlocks.style.display = 'none';
+        }
+
+        // Atur status aktif pada link navigasi
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => link.classList.remove('active'));
+
+        const activeLink = document.querySelector(`.nav-links a[data-page="${pageName}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+
+        if (pageContent[pageName]) {
+            showPageContent(pageName);
+        } else {
+            showPageContent('default');
+        }
+        
+        // Scroll ke atas konten utama jika berpindah halaman
+        const header = document.querySelector('header');
+        if (header) { // Pastikan header ada
+          const headerHeight = header.offsetHeight;
+          if (window.scrollY > headerHeight + 50) {
+            contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      handleNavigation();
+      window.addEventListener("hashchange", handleNavigation);
+    });
+  </script>
+</body>
+</html>
